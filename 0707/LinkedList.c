@@ -1,35 +1,35 @@
 #include "LinkedList.h"
 
-//³ëµå »ı¼º
+//ë…¸ë“œ ìƒì„±
 Node* SLL_CreateNode(ElementType NewData)
 {
 	Node* NewNode = (Node*)malloc(sizeof(Node));
 
 	if (NewNode != NULL) {
-		NewNode->Data = NewData; //µ¥ÀÌÅÍ ÀúÀå
-		NewNode->NextNode = NULL; //´ÙÀ½ ³ëµå¿¡ ´ëÇÑ Æ÷ÀÎÅÍ´Â NULL·Î ÃÊ±âÈ­
+		NewNode->Data = NewData; //ë°ì´í„° ì €ì¥
+		NewNode->NextNode = NULL; //ë‹¤ìŒ ë…¸ë“œì— ëŒ€í•œ í¬ì¸í„°ëŠ” NULLë¡œ ì´ˆê¸°í™”
 	}
 
-	return NewNode; //³ëµåÀÇ ÁÖ¼Ò ¹İÈ¯
+	return NewNode; //ë…¸ë“œì˜ ì£¼ì†Œ ë°˜í™˜
 }
 
-//³ëµå ¼Ò¸ê
+//ë…¸ë“œ ì†Œë©¸
 void SLL_DestroyNode(Node* Node)
 {
 	free(Node);
 }
 
-//³ëµå Ãß°¡
+//ë…¸ë“œ ì¶”ê°€
 void SLL_AppendNode(Node** Head, Node* NewNode)
 {
-	//Çìµå ³ëµå°¡ NULLÀÌ¶ó¸é »õ·Î¿î ³ëµå°¡ Head
+	//í—¤ë“œ ë…¸ë“œê°€ NULLì´ë¼ë©´ ìƒˆë¡œìš´ ë…¸ë“œê°€ Head
 	if ((*Head) == NULL)
 	{
 		*Head = NewNode;
 	}
 	else
 	{
-		//Å×ÀÏÀ» Ã£¾Æ NewNode¸¦ ¿¬°á
+		//í…Œì¼ì„ ì°¾ì•„ NewNodeë¥¼ ì—°ê²°
 		Node* Tail = (*Head);
 		while (Tail->NextNode != NULL)
 		{
@@ -39,7 +39,7 @@ void SLL_AppendNode(Node** Head, Node* NewNode)
 	}
 }
 
-//³ëµå »ğÀÔ
+//ë…¸ë“œ ì‚½ì…
 void SLL_InsertAfter(Node* Current, Node* NewNode)
 {
 	NewNode->NextNode = Current->NextNode;
@@ -59,7 +59,7 @@ void SLL_InsertNewHead(Node** Head, Node* NewHead)
 	}
 }
 
-//³ëµå Á¦°Å
+//ë…¸ë“œ ì œê±°
 void SLL_RemoveNode(Node** Head, Node* Remove)
 {
 	if (*Head == Remove)
@@ -80,7 +80,7 @@ void SLL_RemoveNode(Node** Head, Node* Remove)
 }
 
 
-//³ëµå Å½»ö
+//ë…¸ë“œ íƒìƒ‰
 Node* SLL_GetNodeAt(Node* Head, int Location)
 {
 	Node* Current = Head;
@@ -93,7 +93,7 @@ Node* SLL_GetNodeAt(Node* Head, int Location)
 	return Current;
 }
 
-//³ëµå ¼ö ¼¼±â
+//ë…¸ë“œ ìˆ˜ ì„¸ê¸°
 int SLL_GetNodeCount(Node* Head)
 {
 	int Count = 0;
