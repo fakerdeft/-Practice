@@ -1,6 +1,6 @@
 #include "CircularDoublyLinkedList.h"
 
-//³ëµå »ı¼º
+//ë…¸ë“œ ìƒì„±
 Node*  CDLL_CreateNode(ElementType NewData)
 {
 	Node* NewNode = (Node*)malloc(sizeof(Node));
@@ -12,16 +12,16 @@ Node*  CDLL_CreateNode(ElementType NewData)
 	return NewNode;
 }
 
-//³ëµå ¼Ò¸ê
+//ë…¸ë“œ ì†Œë©¸
 void CDLL_DestroyNode(Node* Node)
 {
 	free(Node);
 }
 
-//³ëµå Ãß°¡
+//ë…¸ë“œ ì¶”ê°€
 void CDLL_AppendNode(Node** Head, Node* NewNode)
 {
-	//Çìµå ³ëµå°¡ NULLÀÌ¶ó¸é »õ·Î¿î ³ëµå°¡ Head
+	//í—¤ë“œ ë…¸ë“œê°€ NULLì´ë¼ë©´ ìƒˆë¡œìš´ ë…¸ë“œê°€ Head
 	if ((*Head) == NULL)
 	{
 		*Head = NewNode;
@@ -30,18 +30,18 @@ void CDLL_AppendNode(Node** Head, Node* NewNode)
 	}
 	else
 	{
-		//Å×ÀÏ°ú Çìµå »çÀÌ¿¡ NewNode »ğÀÔ
+		//í…Œì¼ê³¼ í—¤ë“œ ì‚¬ì´ì— NewNode ì‚½ì…
 		Node* Tail = (*Head)->PrevNode;
 
 		Tail->NextNode->PrevNode = NewNode;
 		Tail->NextNode = NewNode;
 
 		NewNode->NextNode = (*Head);
-		NewNode->PrevNode = Tail; //±âÁ¸ Å×ÀÏÀ» »õ·Î¿î Å×ÀÏÀÇ PrevNode°¡ °¡¸®Å²´Ù
+		NewNode->PrevNode = Tail; //ê¸°ì¡´ í…Œì¼ì„ ìƒˆë¡œìš´ í…Œì¼ì˜ PrevNodeê°€ ê°€ë¦¬í‚¨ë‹¤
 	}
 }
 
-//³ëµå »ğÀÔ
+//ë…¸ë“œ ì‚½ì…
 void CDLL_InsertAfter(Node* Current, Node* NewNode)
 {
 	NewNode->NextNode = Current->NextNode;
@@ -51,7 +51,7 @@ void CDLL_InsertAfter(Node* Current, Node* NewNode)
 	Current->NextNode = NewNode;
 }
 
-//³ëµå Á¦°Å
+//ë…¸ë“œ ì œê±°
 void CDLL_RemoveNode(Node** Head, Node* Remove)
 {
 	if (*Head == Remove)
@@ -76,7 +76,7 @@ void CDLL_RemoveNode(Node** Head, Node* Remove)
 	}
 }
 
-//³ëµå Å½»ö
+//ë…¸ë“œ íƒìƒ‰
 Node* CDLL_GetNodeAt(Node* Head, int Location)
 {
 	Node* Current = Head;
@@ -88,7 +88,7 @@ Node* CDLL_GetNodeAt(Node* Head, int Location)
 	return Current;
 }
 
-//³ëµå ¼ö ¼¼±â
+//ë…¸ë“œ ìˆ˜ ì„¸ê¸°
 int CDLL_GetNodeCount(Node* Head)
 {
 	unsigned int Count = 0;
