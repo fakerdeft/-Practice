@@ -17,13 +17,13 @@ void SBT_DestroyTree(SBTNode* Node) {
 	if (Node == NULL)
 		return;
 
-	//¿ŞÂÊ ÇÏÀ§ Æ®¸® ¼Ò¸ê
+	//ì™¼ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì†Œë©¸
 	SBT_DestroyTree(Node->Left);
 
-	//¿À¸¥ÂÊ ÇÏÀ§ Æ®¸® ¼Ò¸ê
+	//ì˜¤ë¥¸ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì†Œë©¸
 	SBT_DestroyTree(Node->Right);
 
-	//·çÆ® ³ëµå ¼Ò¸ê
+	//ë£¨íŠ¸ ë…¸ë“œ ì†Œë©¸
 	SBT_DestroyNode(Node);
 }
 
@@ -31,13 +31,13 @@ void SBT_PreorderPrintTree(SBTNode* Node) {
 	if (Node == NULL)
 		return;
 
-	//·çÆ® ³ëµå Ãâ·Â
+	//ë£¨íŠ¸ ë…¸ë“œ ì¶œë ¥
 	printf(" %c", Node->Data);
 
-	//¿ŞÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â
+	//ì™¼ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥
 	SBT_PreorderPrintTree(Node->Left);
 
-	//¿À¸¥ÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â
+	//ì˜¤ë¥¸ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥
 	SBT_PreorderPrintTree(Node->Right);
 }
 
@@ -45,13 +45,13 @@ void SBT_InorderPrintTree(SBTNode* Node) {
 	if (Node == NULL)
 		return;
 	
-	//¿ŞÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â
+	//ì™¼ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥
 	SBT_InorderPrintTree(Node->Left);
 
-	//·çÆ® ³ëµå Ãâ·Â
+	//ë£¨íŠ¸ ë…¸ë“œ ì¶œë ¥
 	printf(" %c", Node->Data);
 	
-	//¿À¸¥ÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â
+	//ì˜¤ë¥¸ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥
 	SBT_InorderPrintTree(Node->Right);
 
 }
@@ -60,12 +60,12 @@ void SBT_PostorderPrintTree(SBTNode* Node) {
 	if (Node == NULL)
 		return;
 
-	//¿ŞÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â
+	//ì™¼ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥
 	SBT_PostorderPrintTree(Node->Left);
 
-	//¿À¸¥ÂÊ ÇÏÀ§ Æ®¸® Ãâ·Â
+	//ì˜¤ë¥¸ìª½ í•˜ìœ„ íŠ¸ë¦¬ ì¶œë ¥
 	SBT_PostorderPrintTree(Node->Right);
 
-	//·çÆ® ³ëµå Ãâ·Â
+	//ë£¨íŠ¸ ë…¸ë“œ ì¶œë ¥
 	printf(" %c", Node->Data);
 }
