@@ -46,7 +46,7 @@ void LCRS_PrintTree(LCRSNode* Node, int Depth) {
 	printf("%c\n ", Node->Data);
 
 	if (Node->LeftChild != NULL)
-		LCRS_PrintTree(Node->LeftChild, Depth + 1); //ÀÚ±â ÀÚ½ÅÀ» È£Ãâ=Àç±Í È£Ãâ 
+		LCRS_PrintTree(Node->LeftChild, Depth + 1); //ìžê¸° ìžì‹ ì„ í˜¸ì¶œ=ìž¬ê·€ í˜¸ì¶œ 
 
 	if (Node->RightSibling != NULL)
 		LCRS_PrintTree(Node->RightSibling, Depth);
