@@ -21,4 +21,5 @@ int main() {
 	printf("**ppa=%d, **&pa=%d, *pa=%d, *&a=%d, a=%d\n", *ppa, **&pa, *pa, *&a, a);
 
 	return 0;
+	
 }
