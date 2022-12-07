@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-int global = 100; //¿ÜºÎº¯¼ö,Àü¿ªº¯¼ö
+int global = 100; //ì™¸ë¶€ë³€ìˆ˜,ì „ì—­ë³€ìˆ˜
 
 int main() {
-	int a = 10; //·ÎÄÃº¯¼ö,ÀÚµ¿º¯¼ö
+	int a = 10; //ë¡œì»¬ë³€ìˆ˜,ìë™ë³€ìˆ˜
 	global = 200;
 
 	// malloc, calloc, realloc
 	int* pa = (int*)malloc(100);
 
-	for (int i = 0; i < 25; i++) { //µ¿Àû¸Ş¸ğ¸® °ø°£ ÇÒ´ç
+	for (int i = 0; i < 25; i++) { //ë™ì ë©”ëª¨ë¦¬ ê³µê°„ í• ë‹¹
 		pa[i] = i;
 	}
 	for (int i = 0; i < 25; i++) {
 		printf("pa[%d] = %d\n", i, pa[i]);
 	}
 
-	free(pa); // µ¿Àû¸Ş¸ğ¸® ¹İ³³
-
+	free(pa); // ë™ì ë©”ëª¨ë¦¬ ë°˜ë‚©
 	return 0;
 }
