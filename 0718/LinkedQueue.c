@@ -2,7 +2,7 @@
 #include "LinkedQueue.h"
 
 void LQ_CreateQueue(LinkedQueue** Queue) {
-	//Å¥¸¦ ÀÚÀ¯ÀúÀå¼Ò¿¡ »ý¼º
+	//íë¥¼ ìžìœ ì €ìž¥ì†Œì— ìƒì„±
 	(*Queue) = (LinkedQueue*)malloc(sizeof(LinkedQueue));
 	(*Queue)->Front = NULL;
 	(*Queue)->Rear = NULL;
@@ -14,7 +14,7 @@ void LQ_DestroyQueue(LinkedQueue* Queue) {
 		Node* Popped = LQ_Dequeue(Queue);
 		LQ_DestroyNode(Popped);
 	}
-	//Å¥¸¦ ÀÚÀ¯ÀúÀå¼Ò¿¡¼­ ÇØÁ¦
+	//íë¥¼ ìžìœ ì €ìž¥ì†Œì—ì„œ í•´ì œ
 	free(Queue);
 }
 
@@ -22,11 +22,11 @@ Node* LQ_CreateNode(char* NewData) {
 	Node* NewNode = (Node*)malloc(sizeof(Node));
 	NewNode->Data = (char*)malloc(strlen(NewData) + 1);
 
-	strcpy(NewNode->Data, NewData); //µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù
+	strcpy(NewNode->Data, NewData); //ë°ì´í„°ë¥¼ ì €ìž¥í•œë‹¤
 
-	NewNode->NextNode = NULL; //´ÙÀ½ ³ëµå¿¡ ´ëÇÑ Æ÷ÀÎÅÍ´Â NULL·Î ÃÊ±âÈ­
+	NewNode->NextNode = NULL; //ë‹¤ìŒ ë…¸ë“œì— ëŒ€í•œ í¬ì¸í„°ëŠ” NULLë¡œ ì´ˆê¸°í™”
 
-	return NewNode; //³ëµåÀÇ ÁÖ¼Ò¸¦ ¹ÝÈ¯
+	return NewNode; //ë…¸ë“œì˜ ì£¼ì†Œë¥¼ ë°˜í™˜
 }
 
 void LQ_DestroyNode(Node* _Node) {
@@ -48,7 +48,7 @@ void LQ_Enqueue(LinkedQueue* Queue, Node* NewNode) {
 }
 
 Node* LQ_Dequeue(LinkedQueue* Queue) {
-	// LQ_Dequeue() ÇÔ¼ö°¡ ¹ÝÈ¯ÇÒ »óÀ§ ³ëµå
+	// LQ_Dequeue() í•¨ìˆ˜ê°€ ë°˜í™˜í•  ìƒìœ„ ë…¸ë“œ
 	Node* Front = Queue->Front;
 
 	if (Queue->Front->NextNode == NULL) {
