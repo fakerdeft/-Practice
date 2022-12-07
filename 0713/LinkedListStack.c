@@ -3,7 +3,7 @@
 
 void LLS_CreateStack(LinkedListStack** Stack)
 {
-	//½ºÅÃÀ» ÀÚÀ¯ÀúÀå¼Ò¿¡ »ý¼º
+	//ìŠ¤íƒì„ ìžìœ ì €ìž¥ì†Œì— ìƒì„±
 	(*Stack) = (LinkedListStack*)malloc(sizeof(LinkedListStack));
 	(*Stack)->List = NULL;
 	(*Stack)->Top = NULL;
@@ -18,7 +18,7 @@ void LLS_DestroyStack(LinkedListStack* Stack)
 		LLS_DestroyNode(Popped);
 	}
 
-	//½ºÅÃÀ» ÀÚÀ¯ÀúÀå¼Ò¿¡¼­ ÇØÁ¦
+	//ìŠ¤íƒì„ ìžìœ ì €ìž¥ì†Œì—ì„œ í•´ì œ
 	free(Stack);
 }
 
@@ -27,11 +27,11 @@ Node* LLS_CreateNode(char* NewData)
 	Node* NewNode = (Node*)malloc(sizeof(Node));
 	NewNode->Data = (char*)malloc(strlen(NewData) + 1);
 
-	strcpy(NewNode->Data, NewData); //µ¥ÀÌÅÍ ÀúÀå
+	strcpy(NewNode->Data, NewData); //ë°ì´í„° ì €ìž¥
 
-	NewNode->NextNode = NULL; //´ÙÀ½ ³ëµå¿¡ ´ëÇÑ Æ÷ÀÎÅÍ NULL·Î ÃÊ±âÈ­
+	NewNode->NextNode = NULL; //ë‹¤ìŒ ë…¸ë“œì— ëŒ€í•œ í¬ì¸í„° NULLë¡œ ì´ˆê¸°í™”
 
-	return NewNode; //³ëµå ÁÖ¼Ò ¹ÝÈ¯
+	return NewNode; //ë…¸ë“œ ì£¼ì†Œ ë°˜í™˜
 }
 
 void LLS_DestroyNode(Node* _Node)
@@ -49,7 +49,7 @@ void LLS_Push(LinkedListStack* Stack, Node* NewNode)
 	}
 	else
 	{
-		//ÃÖ»óÀ§ ³ëµå¸¦ Ã£¾Æ NewNode¿¬°á(½×´Â´Ù)
+		//ìµœìƒìœ„ ë…¸ë“œë¥¼ ì°¾ì•„ NewNodeì—°ê²°(ìŒ“ëŠ”ë‹¤)
 		/*Node* OldTop = Stack->List;
 		while (OldTop->NextNode != NULL)
 		{
@@ -57,19 +57,19 @@ void LLS_Push(LinkedListStack* Stack, Node* NewNode)
 		}
 		OldTop->NextNode = NewNode;*/
 
-		Node* OldTop = Stack->Top; //²¿¸®³ëµå
+		Node* OldTop = Stack->Top; //ê¼¬ë¦¬ë…¸ë“œ
 		OldTop->NextNode = NewNode;
 		NewNode->PrevNode = OldTop;
 
 		Stack->Count++;
 	}
-	//½ºÅÃÀÇ Top ÇÊµå¿¡ »õ ³ëµå ÁÖ¼Ò µî·Ï
+	//ìŠ¤íƒì˜ Top í•„ë“œì— ìƒˆ ë…¸ë“œ ì£¼ì†Œ ë“±ë¡
 	Stack->Top = NewNode;
 }
 
 Node* LLS_Pop(LinkedListStack* Stack)
 {
-	//LLS_Pop() ÇÔ¼ö°¡ ¹ÝÈ¯ÇÒ ÃÖ»óÀ§ ³ëµå
+	//LLS_Pop() í•¨ìˆ˜ê°€ ë°˜í™˜í•  ìµœìƒìœ„ ë…¸ë“œ
 	Node* TopNode = Stack->Top;
 
 	if (Stack->List == Stack->Top)
@@ -81,7 +81,7 @@ Node* LLS_Pop(LinkedListStack* Stack)
 	else
 	{
 		/*
-		//»õ·Î¿î ÃÖ»óÀ§ ³ëµå¸¦ ½ºÅÃÀÇ Top¿¡ µî·Ï
+		//ìƒˆë¡œìš´ ìµœìƒìœ„ ë…¸ë“œë¥¼ ìŠ¤íƒì˜ Topì— ë“±ë¡
 		Node* CurrentTop = Stack->List;
 		while (CurrentTop != NULL && CurrentTop->NextNode != Stack->Top)
 		{
