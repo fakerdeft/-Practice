@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
-//±¸Á¶Ã¼
-struct Student {  //»ç¿ëÀÚ Á¤ÀÇ µ¥ÀÌÅÍ Å¸ÀÔ
-	char name[30]; //±¸Á¶Ã¼ ¸â¹ö
+//êµ¬ì¡°ì²´
+struct Student {  //ì‚¬ìš©ìž ì •ì˜ ë°ì´í„° íƒ€ìž…
+	char name[30]; //êµ¬ì¡°ì²´ ë©¤ë²„
 	int age;
 	int grade;
 
@@ -21,7 +21,7 @@ struct Student {  //»ç¿ëÀÚ Á¤ÀÇ µ¥ÀÌÅÍ Å¸ÀÔ
 	a.age = 10;
 	a.grade = 3;
 
-	printf("ÀÌ¸§: %s, ³ªÀÌ: %d, ÇÐ³â: %d\n", a.name, a.age, a.grade);
+	printf("ì´ë¦„: %s, ë‚˜ì´: %d, í•™ë…„: %d\n", a.name, a.age, a.grade);
 	
 	(&a)->name[0] = 'K';
 	(&a)->name[1] = 'O';
@@ -31,7 +31,7 @@ struct Student {  //»ç¿ëÀÚ Á¤ÀÇ µ¥ÀÌÅÍ Å¸ÀÔ
 	(&a)->age = 12;
 	(&a)->grade = 1;
 
-	printf("ÀÌ¸§: %s, ³ªÀÌ: %d, ÇÐ³â: %d\n", (&a)->name, (&a)->age, (&a)->grade);
+	printf("ì´ë¦„: %s, ë‚˜ì´: %d, í•™ë…„: %d\n", (&a)->name, (&a)->age, (&a)->grade);
 	
 
 	return 0;
@@ -57,10 +57,9 @@ int main() {
 	a.Next = &b;
 	b.Next = &c;
 
-	printf("ÀÌ¸§: %s, ³ªÀÌ: %d, ÇÐ³â: %d\n", a.name, a.age, a.grade);
-	printf("ÀÌ¸§: %s, ³ªÀÌ: %d, ÇÐ³â: %d\n", a.Next->name, a.Next->age, a.Next->grade);
-	printf("ÀÌ¸§: %s, ³ªÀÌ: %d, ÇÐ³â: %d\n", a.Next->Next->name, a.Next->Next->age, a.Next->Next->grade);
-
+	printf("ì´ë¦„: %s, ë‚˜ì´: %d, í•™ë…„: %d\n", a.name, a.age, a.grade);
+	printf("ì´ë¦„: %s, ë‚˜ì´: %d, í•™ë…„: %d\n", a.Next->name, a.Next->age, a.Next->grade);
+	printf("ì´ë¦„: %s, ë‚˜ì´: %d, í•™ë…„: %d\n", a.Next->Next->name, a.Next->Next->age, a.Next->Next->grade);
 
 	return 0;
 }
