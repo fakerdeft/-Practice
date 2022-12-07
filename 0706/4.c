@@ -1,7 +1,7 @@
 #include <stdio.h>
-//ÇÔ¼ö
+//Ã‡Ã”Â¼Ã¶
 
-//returntype ÇÔ¼ö¸í(parameter) { //¸í·É¾î }
+//returntype Ã‡Ã”Â¼Ã¶Â¸Ã­(parameter) { //Â¸Ã­Â·Ã‰Â¾Ã® }
 int add(int a, int b) {
 	int temp;
 	temp = a + b;
@@ -35,7 +35,6 @@ int main() {
 
 	PSwap(&a, &b);
 	printf("a = %d, b = %d\n", a, b);
-
 
 	return 0;
 }
