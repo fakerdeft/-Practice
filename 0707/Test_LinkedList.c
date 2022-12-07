@@ -8,7 +8,7 @@ int main()
 	Node* Current = NULL;
 	Node* NewNode = NULL;
 
-	//³ëµå 5°³ Ãß°¡
+	//ë…¸ë“œ 5ê°œ ì¶”ê°€
 	for (i = 0; i < 5; i++)
 	{
 		NewNode = SLL_CreateNode(i);
@@ -20,7 +20,7 @@ int main()
 	NewNode = SLL_CreateNode(-2);
 	SLL_InsertNewHead(&List, NewNode);
 
-	//¸®½ºÆ® Ãâ·Â
+	//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 	Count = SLL_GetNodeCount(List);
 	for (i = 0; i < Count; i++)
 	{
@@ -28,7 +28,7 @@ int main()
 		printf("List[%d]:%d\n", i, Current->Data);
 	}
 
-	//¸®½ºÆ®ÀÇ ¼¼ ¹øÂ° ³ëµå µÚ¿¡ »õ ³ëµå »ğÀÔ
+	//ë¦¬ìŠ¤íŠ¸ì˜ ì„¸ ë²ˆì§¸ ë…¸ë“œ ë’¤ì— ìƒˆ ë…¸ë“œ ì‚½ì…
 	printf("\nInserting 3000 After [2]...\n\n");
 
 	Current = SLL_GetNodeAt(List, 2);
@@ -36,7 +36,7 @@ int main()
 
 	SLL_InsertAfter(Current, NewNode);
 
-	//¸®½ºÆ® Ãâ·Â
+	//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 	Count = SLL_GetNodeCount(List);
 	for (i = 0; i < Count; i++)
 	{
@@ -44,7 +44,7 @@ int main()
 		printf("List[%d]: %d\n", i, Current->Data);
 	}
 
-	//¸ğµç ³ëµå¸¦ ¸Ş¸ğ¸®¿¡¼­ Á¦°Å
+	//ëª¨ë“  ë…¸ë“œë¥¼ ë©”ëª¨ë¦¬ì—ì„œ ì œê±°
 	printf("\nDestroying List...\n");
 
 	for (i = 0; i < Count; i++)
@@ -57,6 +57,5 @@ int main()
 			SLL_DestroyNode(Current);
 		}
 	}
-
 	return 0;
 }
