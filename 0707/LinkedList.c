@@ -79,7 +79,6 @@ void SLL_RemoveNode(Node** Head, Node* Remove)
 	}
 }
 
-
 //노드 탐색
 Node* SLL_GetNodeAt(Node* Head, int Location)
 {
