@@ -58,7 +58,7 @@ int main(void)
         printf("number: %d, score: %lf\n", DataSet[i].number, DataSet[i].score);
     }
 
-    printf("3¸¸°³ ¼ÒÆÃ ½Ã°£: %lf\n", resulttime);
+    printf("3Â¸Â¸Â°Â³ Â¼Ã’Ã†Ãƒ Â½ÃƒÂ°Â£: %lf\n", resulttime);
     printf("\n");
 
     return 0;
